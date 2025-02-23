@@ -14,6 +14,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Services />} />
+          <Route path="/corp" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/group-tours" element={<GroupTours />} /> {/* Add GroupTours route */}
           {/* Add more pages as needed */}
