@@ -11,10 +11,8 @@ const Header = () => {
         <header className="header">
             <div className="header-container">
                 <div className="header-left">
-                    <button className="menu-button" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                        <FaBars />
-                        <span>Menu</span>
-                    </button>
+                    
+                    
                     <Link to="/" className="logo">
                         <img src="https://asiatourer.com/wp-content/uploads/2025/02/Untitled-design-1.png" alt="Asia Tourer Logo" />
                         <div className="logo-text">
@@ -51,17 +49,6 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            {isMenuOpen && (
-                <nav className="vertical-menu">
-                    <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/destinations">Destinations</Link></li>
-                        <li><Link to="/tours">Tours</Link></li>
-                        <li><Link to="/about">About Us</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
-                    </ul>
-                </nav>
-            )}
         </header>
     );
 };
