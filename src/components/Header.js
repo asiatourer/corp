@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaYoutube, FaInstagram, FaBars } from 'react-icons/fa';
+import { FaFacebookF, FaYoutube, FaInstagram } from 'react-icons/fa';
 import { FiMail, FiPhone } from 'react-icons/fi';
 import './Header.css';
 
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { t, i18n } = useTranslation();
+
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng);
+    };
 
     return (
         <header className="header">
             <div className="header-container">
                 <div className="header-left">
-                    
-                    
                     <Link to="/" className="logo">
                         <img src="https://asiatourer.com/wp-content/uploads/2025/02/Untitled-design-1.png" alt="Asia Tourer Logo" />
                         <div className="logo-text">
@@ -47,8 +50,17 @@ const Header = () => {
                             <FaInstagram className="social-icon" />
                         </a>
                     </div>
+                    <div className="language-switcher">
+                    <select onChange={(e) => changeLanguage(e.target.value)} className="language-dropdown">
+                        <option value="en">English</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="mr">मराठी</option>
+                    </select>
                 </div>
+                </div>
+               
             </div>
+
         </header>
     );
 };
